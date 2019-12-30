@@ -211,7 +211,7 @@ class Player {
         } 
 
         if (this.direction === 'right' && boundDir === 'right') {
-            this.pos[0] -= 1;
+            this.pos[0] += 0;
             return;
         } 
         if (this.direction === 'down'){
