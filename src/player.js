@@ -9,7 +9,7 @@ class Player {
         this.width = 15;
         this.height = 15;
         this.sprite = new Image();
-        this.sprite.src = "characters.png";
+        this.sprite.src = "redSprites.png";
         this.direction = 'down';
         this.boundDirs = [];
         this.biking = false;
@@ -35,7 +35,7 @@ class Player {
         const playerR = {
             walkRightAnimation: [
                 { sX: 0, sY: 4 },
-                { sX: 15, sY: 4 },
+                { sX: 14, sY: 4 },
                 { sX: 0, sY: 4 },
             ],
             x: this.pos[0],
@@ -45,9 +45,9 @@ class Player {
         };
         const playerU = {
             walkUpAnimation: [
-                { sX: 123, sY: 4},
-                { sX: 138, sY: 4},
-                { sX: 123, sY: 4}
+                { sX: 122, sY: 4},
+                { sX: 137, sY: 4},
+                { sX: 122, sY: 4}
             ],
             x: this.pos[0],
             y: this.pos[1],
@@ -56,9 +56,9 @@ class Player {
         };
         const playerD = {
             walkDownAnimation: [
-                { sX: 74, sY: 4 },
+                { sX: 73, sY: 4 },
                 { sX: 89, sY: 4 },
-                { sX: 74, sY: 4 }
+                { sX: 73, sY: 4 }
             ],
             x: this.pos[0],
             y: this.pos[1],

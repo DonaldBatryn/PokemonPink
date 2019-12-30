@@ -9,7 +9,10 @@ class GameView {
         this.rightKey = false;
         this.upKey = false;
         this.downKey = false;
-        this.triggeredBound = '';
+        this.eastBorder = 500;
+        this.westBorder = 300;
+        this.northBorder = 250;
+        this.southBorder = 450;
     }
 
     start() {
@@ -30,34 +33,70 @@ class GameView {
 
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        let bounds = this.game.player.outOfBounds();
-        let dirs = ['left', 'up', 'right', 'down'];
-        let dirIndex = dirs.indexOf(bounds[1]);
-        this.game.player.boundDirs.unshift(bounds[1]);
+        // let bounds = this.game.player.outOfBounds();
+        // let dirs = ['left', 'up', 'right', 'down'];
+        // let dirIndex = dirs.indexOf(bounds[1]);
+        // this.game.player.boundDirs.unshift(bounds[1]);
         // if (this.game.player.direction !== bounds[1]) bounds[0] = false;
         
-        if (this.game.player.moving && bounds[0] && (this.game.player.direction === this.game.player.boundDirs[0])) {
-            console.log('moving, outOBound=true, player direction same as boundDir')
-            console.log('bound direction:', this.game.player.boundDirs[0])
-            this.game.player.stillMove(timeDelta, this.game.player.boundDirs[0]);
-            this.game.moveMap();
-        } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 1) % 4])) {
-            console.log('moving, outOBound=true, player direction right of boundDir')
-            this.game.player.boundDirs.unshift(dirs[(dirIndex + 1) % 4]);
-            console.log('bound direction:', this.game.player.boundDirs[0])
+        // if (this.game.player.moving && bounds[0] && (this.game.player.direction === this.game.player.boundDirs[0])) {
+        //     console.log('moving, outOBound=true, player direction same as boundDir')
+        //     console.log('bound direction:', this.game.player.boundDirs[0])
+        //     this.game.player.stillMove(timeDelta, this.game.player.boundDirs[0]);
+        //     this.game.moveMap();
+        // } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 1) % 4])) {
+        //     console.log('moving, outOBound=true, player direction right of boundDir')
+        //     this.game.player.boundDirs.unshift(dirs[(dirIndex + 1) % 4]);
+        //     console.log('bound direction:', this.game.player.boundDirs[0])
             
 
-            this.game.player.move(timeDelta);
+        //     this.game.player.move(timeDelta);
             
-        } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 3) % 4])) {
-            console.log('moving, outOBound=true, player direction left of boundDir')
-            this.game.player.boundDirs.unshift(dirs[(dirIndex + 3) % 4]);
-            console.log('bound direction:', this.game.player.boundDirs[0])
-            this.game.player.move(timeDelta);
-        } else if (this.game.player.moving) {
-            console.log('just moving')
-            console.log('bound direction:', this.game.player.boundDirs[0])
-            this.game.player.move(timeDelta);
+        // } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 3) % 4])) {
+        //     console.log('moving, outOBound=true, player direction left of boundDir')
+        //     this.game.player.boundDirs.unshift(dirs[(dirIndex + 3) % 4]);
+        //     console.log('bound direction:', this.game.player.boundDirs[0])
+        //     this.game.player.move(timeDelta);
+        // } else if (this.game.player.moving) {
+        //     console.log('just moving')
+        //     console.log('bound direction:', this.game.player.boundDirs[0])
+        //     this.game.player.move(timeDelta);
+        // }
+        if (this.game.player.moving) {
+            switch (this.game.player.direction) {
+                case 'left':
+                    if (this.game.player.pos[0] <= this.westBorder) {
+                        this.game.player.stillMove(timeDelta, 'left');
+                        this.game.moveMap();
+                    } else {
+                        this.game.player.move(timeDelta);
+                    }
+                    break;
+                case 'right':
+                    if (this.game.player.pos[0] >= this.eastBorder) {
+                        this.game.player.stillMove(timeDelta, 'right');
+                        this.game.moveMap();
+                    } else {
+                        this.game.player.move(timeDelta);
+                    }
+                    break;
+                case 'up':
+                    if (this.game.player.pos[1] <= this.northBorder) {
+                        this.game.player.stillMove(timeDelta, 'up');
+                        this.game.moveMap();
+                    } else {
+                        this.game.player.move(timeDelta);
+                    }
+                    break;
+                case 'down':
+                    if (this.game.player.pos[1] >= this.southBorder) {
+                        this.game.player.stillMove(timeDelta, 'down');
+                        this.game.moveMap();
+                    } else {
+                        this.game.player.move(timeDelta);
+                    }
+                    break;
+            }
         }
 
         this.game.draw(this.ctx);
