@@ -3,7 +3,7 @@
 class Player {
     constructor(game) {
         this.game = game;
-        this.pos = [395, 250];
+        this.pos = [450, 250];
         this.dX = 0;
         this.dY = 0;
         this.width = 15;
@@ -22,8 +22,20 @@ class Player {
         const playerL = {
             walkLeftAnimation: [
                 { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
                 { sX: 44, sY: 4 },
-                { sX: 29, sY: 4 }
+                { sX: 44, sY: 4 },
+                { sX: 44, sY: 4 },
+                { sX: 44, sY: 4 },
+                { sX: 44, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
+                { sX: 29, sY: 4 },
             ],
             x: this.pos[0],
             y: this.pos[1],
@@ -34,7 +46,19 @@ class Player {
         const playerR = {
             walkRightAnimation: [
                 { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
                 { sX: 14, sY: 4 },
+                { sX: 14, sY: 4 },
+                { sX: 14, sY: 4 },
+                { sX: 14, sY: 4 },
+                { sX: 14, sY: 4 },
+                { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
+                { sX: 0, sY: 4 },
                 { sX: 0, sY: 4 },
             ],
             x: this.pos[0],
@@ -45,8 +69,20 @@ class Player {
         const playerU = {
             walkUpAnimation: [
                 { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
                 { sX: 137, sY: 4},
-                { sX: 122, sY: 4}
+                { sX: 137, sY: 4},
+                { sX: 137, sY: 4},
+                { sX: 137, sY: 4},
+                { sX: 137, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
+                { sX: 122, sY: 4},
             ],
             x: this.pos[0],
             y: this.pos[1],
@@ -56,8 +92,20 @@ class Player {
         const playerD = {
             walkDownAnimation: [
                 { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
                 { sX: 89, sY: 4 },
-                { sX: 73, sY: 4 }
+                { sX: 89, sY: 4 },
+                { sX: 89, sY: 4 },
+                { sX: 89, sY: 4 },
+                { sX: 89, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
+                { sX: 73, sY: 4 },
             ],
             x: this.pos[0],
             y: this.pos[1],
@@ -167,7 +215,7 @@ class Player {
     // }
 
     move(timeDelta) {
-        if (this.frame === 2) {
+        if (this.frame === 14) {
             this.frame = 0;
         } else {
             this.frame += 1;
@@ -188,7 +236,7 @@ class Player {
     }
 
     stillMove(timeDelta, boundDir) {
-        if (this.frame === 2) {
+        if (this.frame === 14) {
             this.frame = 0;
         } else {
             this.frame += 1;
