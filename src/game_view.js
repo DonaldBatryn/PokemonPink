@@ -34,6 +34,7 @@ class GameView {
         let dirs = ['left', 'up', 'right', 'down'];
         let dirIndex = dirs.indexOf(bounds[1]);
         this.game.player.boundDirs.unshift(bounds[1]);
+        // if (this.game.player.direction !== bounds[1]) bounds[0] = false;
         
         if (this.game.player.moving && bounds[0] && (this.game.player.direction === this.game.player.boundDirs[0])) {
             console.log('moving, outOBound=true, player direction same as boundDir')
@@ -44,7 +45,7 @@ class GameView {
             console.log('moving, outOBound=true, player direction right of boundDir')
             this.game.player.boundDirs.unshift(dirs[(dirIndex + 1) % 4]);
             console.log('bound direction:', this.game.player.boundDirs[0])
-            bounds[0] = false
+            
 
             this.game.player.move(timeDelta);
             

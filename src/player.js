@@ -9,7 +9,7 @@ class Player {
         this.width = 15;
         this.height = 15;
         this.sprite = new Image();
-        this.sprite.src = "redSprites.png";
+        this.sprite.src = "characters.png";
         this.direction = 'down';
         this.boundDirs = [];
         this.biking = false;
@@ -211,7 +211,7 @@ class Player {
         } 
 
         if (this.direction === 'right' && boundDir === 'right') {
-            this.pos[0] += 0;
+            this.pos[0] -= 1;
             return;
         } 
         if (this.direction === 'down'){
