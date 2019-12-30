@@ -31,14 +31,31 @@ class GameView {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         let bounds = this.game.player.outOfBounds();
+        let dirs = ['left', 'up', 'right', 'down'];
+        let dirIndex = dirs.indexOf(bounds[1]);
+        this.game.player.boundDirs.unshift(bounds[1]);
         
-        if (this.game.player.moving && bounds[0] && (this.game.player.direction === bounds[1])) {
-            console.log('should move map')
-            console.log(bounds[1])
-            this.game.player.stillMove(timeDelta, bounds[1]);
+        if (this.game.player.moving && bounds[0] && (this.game.player.direction === this.game.player.boundDirs[0])) {
+            console.log('moving, outOBound=true, player direction same as boundDir')
+            console.log('bound direction:', this.game.player.boundDirs[0])
+            this.game.player.stillMove(timeDelta, this.game.player.boundDirs[0]);
             this.game.moveMap();
+        } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 1) % 4])) {
+            console.log('moving, outOBound=true, player direction right of boundDir')
+            this.game.player.boundDirs.unshift(dirs[(dirIndex + 1) % 4]);
+            console.log('bound direction:', this.game.player.boundDirs[0])
+            bounds[0] = false
+
+            this.game.player.move(timeDelta);
+            
+        } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 3) % 4])) {
+            console.log('moving, outOBound=true, player direction left of boundDir')
+            this.game.player.boundDirs.unshift(dirs[(dirIndex + 3) % 4]);
+            console.log('bound direction:', this.game.player.boundDirs[0])
+            this.game.player.move(timeDelta);
         } else if (this.game.player.moving) {
-            console.log('not supposed to hit')
+            console.log('just moving')
+            console.log('bound direction:', this.game.player.boundDirs[0])
             this.game.player.move(timeDelta);
         }
 

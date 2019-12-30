@@ -11,10 +11,12 @@ class Player {
         this.sprite = new Image();
         this.sprite.src = "redSprites.png";
         this.direction = 'down';
+        this.boundDirs = [];
         this.biking = false;
         this.fishing = false;
         this.moving = false;
         this.frame = 0;
+        this.speed = 3;
     }
 
     draw(ctx) {
@@ -64,13 +66,6 @@ class Player {
             h: this.height
         };
 
-        // let player = this.direction === 'left' ? (
-        //     playerL.walkLeftAnimation[this.frame]
-        // ) : this.direction === 'right' ? (
-        //     playerR.walkRightAnimation[this.frame]
-        // ) : this.direction === 'up' ? (
-        //     playerU.walkUpAnimation[this.frame]
-        // ) : playerD.walkDownAnimation[this.frame];
         let player;
         switch (this.direction) {
             case 'left':
@@ -145,16 +140,12 @@ class Player {
     outOfBounds(){
         let canvasWidth = this.game.canvas.width;
         let canvasHeight = this.game.canvas.height;
-        let northBound = canvasHeight - (canvasHeight * 0.7);
+        let northBound = canvasHeight - (canvasHeight * 0.75);
         let southBound = canvasHeight - (canvasHeight * 0.3);
-        let westBound = canvasWidth - (canvasWidth * 0.7);
+        let westBound = canvasWidth - (canvasWidth * 0.75);
         let eastBound = canvasWidth - (canvasWidth * 0.3);
 
-        // if (this.pos[0] < eastBound || this.pos[0] > westBound ||
-        // this.pos[1] < northBound || this.pos[1] > southBound) {
-            
-        //     return true;
-        // }
+       
         if (this.pos[0] < westBound) {
             
             return [true, 'left'];
@@ -184,13 +175,13 @@ class Player {
         }
         if (this.moving){
             if (this.direction === 'down') {
-                this.pos[1] += 5;
+                this.pos[1] += this.speed;
             } else if (this.direction === 'up') {
-                this.pos[1] -= 5;
+                this.pos[1] -= this.speed;
             } else if (this.direction === 'right') {
-                this.pos[0] += 5;
+                this.pos[0] += this.speed;
             } else if (this.direction === 'left') {
-                this.pos[0] -= 5;
+                this.pos[0] -= this.speed;
             }
         } else {
             return;
@@ -224,16 +215,16 @@ class Player {
             return;
         } 
         if (this.direction === 'down'){
-            this.pos[1] += 5;
+            this.pos[1] += this.speed;
             return;
         } else if (this.direction === 'up') {
-            this.pos[1] -= 5;
+            this.pos[1] -= this.speed;
             return;
         } else if (this.direction === 'right') {
-            this.pos[0] += 5;
+            this.pos[0] += this.speed;
             return;
         } else if (this.direction === 'left') {
-            this.pos[0] -= 5;
+            this.pos[0] -= this.speed;
             return;
         }
        

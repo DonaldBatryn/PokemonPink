@@ -8,6 +8,7 @@ class Game {
         this.player = new Player(this);
         this.canvas = canvas;
         this.scale = 2.8;
+        this.speed = 3;
         this.sX = -200;
         this.sY = -200;
         this.width = 608;
@@ -20,22 +21,22 @@ class Game {
         // if player moving left
             // decrease mapX
         if (this.player.direction === 'left') {
-            this.sX += 5;
+            this.sX += this.speed;
         }
         // if player moving right
             // increase mapX
         if (this.player.direction === 'right') {
-            this.sX -= 5;
+            this.sX -= this.speed;
         }
         //if player moving down
             // decrease mapY
         if (this.player.direction === 'down') {
-            this.sY -= 5;
+            this.sY -= this.speed;
         }
         // if player moving up
             // increase mapY
         if (this.player.direction === 'up') {
-            this.sY += 5;
+            this.sY += this.speed;
         }
     }
 
