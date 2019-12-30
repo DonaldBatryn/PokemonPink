@@ -33,39 +33,10 @@ class GameView {
 
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // let bounds = this.game.player.outOfBounds();
-        // let dirs = ['left', 'up', 'right', 'down'];
-        // let dirIndex = dirs.indexOf(bounds[1]);
-        // this.game.player.boundDirs.unshift(bounds[1]);
-        // if (this.game.player.direction !== bounds[1]) bounds[0] = false;
-        
-        // if (this.game.player.moving && bounds[0] && (this.game.player.direction === this.game.player.boundDirs[0])) {
-        //     console.log('moving, outOBound=true, player direction same as boundDir')
-        //     console.log('bound direction:', this.game.player.boundDirs[0])
-        //     this.game.player.stillMove(timeDelta, this.game.player.boundDirs[0]);
-        //     this.game.moveMap();
-        // } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 1) % 4])) {
-        //     console.log('moving, outOBound=true, player direction right of boundDir')
-        //     this.game.player.boundDirs.unshift(dirs[(dirIndex + 1) % 4]);
-        //     console.log('bound direction:', this.game.player.boundDirs[0])
-            
-
-        //     this.game.player.move(timeDelta);
-            
-        // } else if (this.game.player.moving && bounds[0] && (this.game.player.direction === dirs[(dirIndex + 3) % 4])) {
-        //     console.log('moving, outOBound=true, player direction left of boundDir')
-        //     this.game.player.boundDirs.unshift(dirs[(dirIndex + 3) % 4]);
-        //     console.log('bound direction:', this.game.player.boundDirs[0])
-        //     this.game.player.move(timeDelta);
-        // } else if (this.game.player.moving) {
-        //     console.log('just moving')
-        //     console.log('bound direction:', this.game.player.boundDirs[0])
-        //     this.game.player.move(timeDelta);
-        // }
         if (this.game.player.moving) {
             switch (this.game.player.direction) {
                 case 'left':
-                    if (this.game.player.pos[0] <= this.westBorder) {
+                    if (this.game.player.pos[0] <= this.westBorder && this.game.sX < 0) {
                         this.game.player.stillMove(timeDelta, 'left');
                         this.game.moveMap();
                     } else {
@@ -73,15 +44,16 @@ class GameView {
                     }
                     break;
                 case 'right':
-                    if (this.game.player.pos[0] >= this.eastBorder) {
+                    if (this.game.player.pos[0] >= this.eastBorder && this.game.sX > -902) {
                         this.game.player.stillMove(timeDelta, 'right');
                         this.game.moveMap();
+                        
                     } else {
                         this.game.player.move(timeDelta);
                     }
                     break;
                 case 'up':
-                    if (this.game.player.pos[1] <= this.northBorder) {
+                    if (this.game.player.pos[1] <= this.northBorder && this.game.sY < -3) {
                         this.game.player.stillMove(timeDelta, 'up');
                         this.game.moveMap();
                     } else {
@@ -89,9 +61,10 @@ class GameView {
                     }
                     break;
                 case 'down':
-                    if (this.game.player.pos[1] >= this.southBorder) {
+                    if (this.game.player.pos[1] >= this.southBorder && this.game.sY > -595) {
                         this.game.player.stillMove(timeDelta, 'down');
                         this.game.moveMap();
+                        console.log(this.game.sY)
                     } else {
                         this.game.player.move(timeDelta);
                     }

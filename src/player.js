@@ -11,7 +11,6 @@ class Player {
         this.sprite = new Image();
         this.sprite.src = "redSprites.png";
         this.direction = 'down';
-        this.boundDirs = [];
         this.biking = false;
         this.fishing = false;
         this.moving = false;
@@ -137,35 +136,35 @@ class Player {
         }
     }
 
-    outOfBounds(){
-        let canvasWidth = this.game.canvas.width;
-        let canvasHeight = this.game.canvas.height;
-        let northBound = canvasHeight - (canvasHeight * 0.75);
-        let southBound = canvasHeight - (canvasHeight * 0.3);
-        let westBound = canvasWidth - (canvasWidth * 0.75);
-        let eastBound = canvasWidth - (canvasWidth * 0.3);
+    // outOfBounds(){
+    //     let canvasWidth = this.game.canvas.width;
+    //     let canvasHeight = this.game.canvas.height;
+    //     let northBound = canvasHeight - (canvasHeight * 0.75);
+    //     let southBound = canvasHeight - (canvasHeight * 0.3);
+    //     let westBound = canvasWidth - (canvasWidth * 0.75);
+    //     let eastBound = canvasWidth - (canvasWidth * 0.3);
 
        
-        if (this.pos[0] < westBound) {
+    //     if (this.pos[0] < westBound) {
             
-            return [true, 'left'];
-        }
-        if (this.pos[0] > eastBound) {
+    //         return [true, 'left'];
+    //     }
+    //     if (this.pos[0] > eastBound) {
         
-            return [true, 'right'];
-        }
-        if (this.pos[1] < northBound) {
+    //         return [true, 'right'];
+    //     }
+    //     if (this.pos[1] < northBound) {
        
-            return [true, 'up'];
-        }
-        if (this.pos[1] > southBound) {
+    //         return [true, 'up'];
+    //     }
+    //     if (this.pos[1] > southBound) {
      
-            return [true, 'down'];
-        }
+    //         return [true, 'down'];
+    //     }
 
-        return [false, ''];
+    //     return [false, ''];
         
-    }
+    // }
 
     move(timeDelta) {
         if (this.frame === 2) {
