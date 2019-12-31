@@ -18,24 +18,8 @@ class Game {
         
     }
 
-    // checkBounds(playerPos, playerDir) {
-    //     switch (playerDir) {
-    //         case 'left':
-
-    //             break;
-    //         case 'right':
-
-    //             break;
-    //         case 'up':
-
-    //             break;
-    //         case 'down':
-
-    //             break;
-    //     }
-    // }
-
     checkCollisions(playerGridPos) {
+        console.log(playerGridPos)
         let j = playerGridPos[0];
         let i = playerGridPos[1];
         return this.grid[i][j];
@@ -137,18 +121,18 @@ class Game {
         this.grid[39][31] = false;
 
         // lower aisle against water
-        this.grid[40][32] = false;
-        this.grid[40][33] = false;
-        this.grid[40][34] = false;
-        this.grid[40][35] = false;
-        this.grid[40][36] = false;
-        this.grid[40][37] = false;
-        this.grid[40][38] = false;
-        this.grid[40][39] = false;
-        this.grid[40][40] = false;
-        this.grid[40][41] = false;
-        this.grid[40][42] = false;
-        this.grid[40][43] = false;
+        this.grid[38][32] = false;
+        this.grid[38][33] = false;
+        this.grid[38][34] = false;
+        this.grid[38][35] = false;
+        this.grid[38][36] = false;
+        this.grid[38][37] = false;
+        this.grid[38][38] = false;
+        this.grid[38][39] = false;
+        this.grid[38][40] = false;
+        this.grid[38][41] = false;
+        this.grid[38][42] = false;
+        this.grid[38][43] = false;
 
         //zig zag down water
         this.grid[41][35] = false;
@@ -156,6 +140,8 @@ class Game {
         this.grid[43][35] = false;
         this.grid[44][35] = false;
 
+        this.grid[39][43] = false;
+        this.grid[40][43] = false;
         this.grid[41][43] = false;
         this.grid[42][43] = false;
         this.grid[43][43] = false;
@@ -166,16 +152,18 @@ class Game {
         this.grid[48][43] = false;
 
 
-        this.grid[48][44] = false;
-        this.grid[48][45] = false;
-        this.grid[48][46] = false;
-        this.grid[48][47] = false;
-        this.grid[48][48] = false;
-        this.grid[48][49] = false;
-        this.grid[48][50] = false;
+        this.grid[46][44] = false;
+        this.grid[46][45] = false;
+        this.grid[46][46] = false;
+        this.grid[46][47] = false;
+        this.grid[46][48] = false;
+        this.grid[46][49] = false;
+        this.grid[46][50] = false;
+        this.grid[46][51] = false;
+
+
+        this.grid[47][51] = false;
         this.grid[48][51] = false;
-
-
         this.grid[49][51] = false;
         this.grid[50][51] = false;
         this.grid[51][51] = false;
@@ -186,38 +174,41 @@ class Game {
         this.grid[56][51] = false;
 
         // far bottom edge
-        this.grid[56][52] = false;
-        this.grid[56][53] = false;
-        this.grid[56][54] = false;
-        this.grid[56][55] = false;
-        this.grid[56][56] = false;
-        this.grid[56][57] = false;
-        this.grid[56][58] = false;
-        this.grid[56][59] = false;
-        this.grid[56][60] = false;
-        this.grid[56][61] = false;
-        this.grid[56][62] = false;
-        this.grid[56][63] = false;
-        this.grid[56][64] = false;
-        this.grid[56][65] = false;
-        this.grid[56][66] = false;
-        this.grid[56][67] = false;
-        this.grid[56][68] = false;
-        this.grid[56][69] = false;
-        this.grid[56][70] = false;
-        this.grid[56][71] = false;
-        this.grid[56][72] = false;
-
-
-        this.grid[52][72] = false;
-        this.grid[53][72] = false;
+        this.grid[54][52] = false;
+        this.grid[54][53] = false;
+        this.grid[54][54] = false;
+        this.grid[54][55] = false;
+        this.grid[54][56] = false;
+        this.grid[54][57] = false;
+        this.grid[54][58] = false;
+        this.grid[54][59] = false;
+        this.grid[54][60] = false;
+        this.grid[54][61] = false;
+        this.grid[54][62] = false;
+        this.grid[54][63] = false;
+        this.grid[54][64] = false;
+        this.grid[54][65] = false;
+        this.grid[54][66] = false;
+        this.grid[54][67] = false;
+        this.grid[54][68] = false;
+        this.grid[54][69] = false;
+        this.grid[54][70] = false;
+        this.grid[54][71] = false;
         this.grid[54][72] = false;
-        this.grid[55][72] = false;
 
 
-        this.grid[52][73] = false;
-        this.grid[52][74] = false;
-        this.grid[52][75] = false;
+        this.grid[52][70] = false;
+        this.grid[53][70] = false;
+        this.grid[54][70] = false;
+        this.grid[55][70] = false;
+
+
+        this.grid[50][71] = false;
+        this.grid[51][71] = false;
+        this.grid[50][72] = false;
+        this.grid[50][73] = false;
+        this.grid[50][74] = false;
+        this.grid[50][75] = false;
 
         this.grid[47][64] = false;
         this.grid[47][65] = false;
@@ -432,7 +423,7 @@ class Game {
             this.width * this.scale,
             this.height * this.scale
         );
-        this.layGrid(ctx);
+        // this.layGrid(ctx);
         this.player.draw(ctx);
         
     }
