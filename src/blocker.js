@@ -1,8 +1,38 @@
 
 class Blocker {
-    constructor(pos) {
+    constructor(pos, dims) {
         this.pos = pos;
-        this.dims = [15, 15];
+        this.dims = dims;
+        this.speed = 3;
+        this.move = this.move.bind(this);
+    }
+
+    draw(ctx) {
+        
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = 'pink';
+        
+        ctx.rect(this.pos[0], this.pos[1], this.dims[0], this.dims[1]);
+        ctx.stroke();
+        // ctx.fill();
+    }
+
+    move(dir) {
+        switch (dir) {
+            case 'left':
+                this.pos[0] += this.speed;
+                break;
+            case 'right':
+                this.pos[0] -= this.speed;
+                break;
+            case 'up':
+                this.pos[1] += this.speed;
+                break;
+            case 'down':
+                this.pos[1] -= this.speed;
+                break;
+        }
     }
 
     isCollidedWith(player) {
@@ -25,3 +55,5 @@ class Blocker {
             // bottom of blocker = this.pos[1] + this.dims[1], from this.pos[0] to this.pos[0] + this.dims[0]
     }
 }
+
+export default Blocker;
