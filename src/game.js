@@ -18,11 +18,11 @@ class Game {
         
     }
 
-    makeBlockers(ctx) {
-        let blocker = new Blocker([400, 200], [80, 20]);
-        // blocker.draw(ctx);
-        this.blockers.push(blocker);
-    }
+    // makeBlockers(ctx) {
+    //     let blocker = new Blocker([400, 200], [80, 20]);
+    //     // blocker.draw(ctx);
+    //     this.blockers.push(blocker);
+    // }
 
     checkBounds(playerPos, playerDir) {
         switch (playerDir) {
@@ -39,6 +39,21 @@ class Game {
 
                 break;
         }
+    }
+
+    checkCollisions(dir) {
+        let collided = false;
+        console.log(this.player.pos)
+        console.log(this.player.gridPos)
+        for (let i = 0; i < this.grid.length; i++) {
+            for (let j = 0; j < this.grid[i].length; j++) {
+                if (this.grid[i][j] === false && this.player.gridPos === [i, j]) {
+                    collided = true;
+
+                }
+            }
+        }
+        return collided;
     }
 
     moveMap() {
@@ -341,6 +356,60 @@ class Game {
         this.grid[33][36] = false;
         this.grid[34][36] = false;
         this.grid[35][36] = false;
+
+        this.grid[35][37] = false;
+        this.grid[35][38] = false;
+        this.grid[35][39] = false;
+        this.grid[35][40] = false;
+        this.grid[35][41] = false;
+        this.grid[35][42] = false;
+        this.grid[35][43] = false;
+        this.grid[35][44] = false;
+        this.grid[35][45] = false;
+        this.grid[35][46] = false;
+        this.grid[35][47] = false;
+        this.grid[35][48] = false;
+        this.grid[35][49] = false;
+        this.grid[35][50] = false;
+        this.grid[35][51] = false;
+        this.grid[35][52] = false;
+
+        this.grid[34][52] = false;
+        this.grid[34][53] = false;
+        this.grid[34][54] = false;
+        this.grid[34][55] = false;
+
+        this.grid[36][52] = false;
+        this.grid[37][52] = false;
+        this.grid[38][52] = false;
+        this.grid[39][52] = false;
+        this.grid[40][52] = false;
+        this.grid[41][52] = false;
+        this.grid[42][52] = false;
+        this.grid[43][52] = false;
+
+        this.grid[43][44] = false;
+        this.grid[43][45] = false;
+        this.grid[43][48] = false;
+        this.grid[43][49] = false;
+        this.grid[43][50] = false;
+        this.grid[43][51] = false;
+
+        this.grid[43][53] = false;
+        this.grid[43][54] = false;
+        this.grid[43][55] = false;
+        this.grid[43][56] = false;
+        this.grid[43][57] = false;
+        this.grid[43][58] = false;
+        this.grid[43][59] = false;
+        this.grid[43][60] = false;
+        this.grid[43][61] = false;
+        this.grid[43][62] = false;
+        this.grid[43][63] = false;
+
+        this.grid[40][59] = false;
+        this.grid[41][59] = false;
+        this.grid[42][59] = false;
         
     }
 

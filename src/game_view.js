@@ -35,6 +35,12 @@ class GameView {
         // console.log('player pos', this.game.player.pos);
         // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+        if (this.game.checkCollisions()) {
+            console.log('check collisions was true')
+            this.game.player.stillMove(timeDelta, this.game.player.direction);
+            return;
+        }
+
         if (this.game.player.moving) {
             switch (this.game.player.direction) {
                 case 'left':

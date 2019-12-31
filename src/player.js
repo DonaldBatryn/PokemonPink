@@ -4,6 +4,7 @@ class Player {
     constructor(game) {
         this.game = game;
         this.pos = [450, 250];
+        this.gridPos = [Math.floor((this.pos[0] / 10.5)), Math.floor((this.pos[1] / 12.09) * 1)]
         this.dX = 0;
         this.dY = 0;
         this.width = 15;
@@ -11,6 +12,7 @@ class Player {
         this.sprite = new Image();
         this.sprite.src = "redSprites.png";
         this.direction = 'down';
+        // this.atWall = false;
         this.biking = false;
         this.fishing = false;
         this.moving = false;
@@ -184,36 +186,6 @@ class Player {
         }
     }
 
-    // outOfBounds(){
-    //     let canvasWidth = this.game.canvas.width;
-    //     let canvasHeight = this.game.canvas.height;
-    //     let northBound = canvasHeight - (canvasHeight * 0.75);
-    //     let southBound = canvasHeight - (canvasHeight * 0.3);
-    //     let westBound = canvasWidth - (canvasWidth * 0.75);
-    //     let eastBound = canvasWidth - (canvasWidth * 0.3);
-
-       
-    //     if (this.pos[0] < westBound) {
-            
-    //         return [true, 'left'];
-    //     }
-    //     if (this.pos[0] > eastBound) {
-        
-    //         return [true, 'right'];
-    //     }
-    //     if (this.pos[1] < northBound) {
-       
-    //         return [true, 'up'];
-    //     }
-    //     if (this.pos[1] > southBound) {
-     
-    //         return [true, 'down'];
-    //     }
-
-    //     return [false, ''];
-        
-    // }
-
     move(timeDelta) {
         if (this.frame === 14) {
             this.frame = 0;
@@ -233,6 +205,7 @@ class Player {
         } else {
             return;
         }
+        this.gridPos = [Math.floor((this.pos[0] / 10.5) * 1), Math.floor((this.pos[1] / 12.09) * 1)]
     }
 
     stillMove(timeDelta, boundDir) {
