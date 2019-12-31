@@ -18,7 +18,7 @@ class GameView {
     start() {
         this.bindKeyHandlers();
         this.game.draw(this.ctx);
-        // this.game.blockers.forEach(blocker => blocker.draw(this.ctx));
+        this.game.setValidSquares();
         this.lastTime = 0;
         requestAnimationFrame(this.loop.bind(this))
     }
@@ -31,24 +31,18 @@ class GameView {
             this.frameCount = 0;
         }
         
-        // let bounds = this.game.checkBounds(this.game.player.pos);
-        // console.log('player pos', this.game.player.pos);
-        // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        if (this.game.checkCollisions()) {
+        if (!this.game.checkCollisions(this.game.player.gridPos)) {
             console.log('check collisions was true')
-            this.game.player.stillMove(timeDelta, this.game.player.direction);
-            return;
-        }
-
-        if (this.game.player.moving) {
+            this.game.player.hitWall(timeDelta);
+            
+        } else if (this.game.player.moving) {
             switch (this.game.player.direction) {
                 case 'left':
                     if (this.game.player.pos[0] <= this.westBorder && this.game.sX < 0) {
-                        // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
                         this.game.player.stillMove(timeDelta, 'left');
                         this.game.moveMap();
-                        // this.game.blockers.forEach(blocker => blocker.move('left'));
+                        
                     } else {
                         this.game.player.move(timeDelta);
                     }
@@ -57,7 +51,7 @@ class GameView {
                     if (this.game.player.pos[0] >= this.eastBorder && this.game.sX > -902) {
                         this.game.player.stillMove(timeDelta, 'right');
                         this.game.moveMap();
-                        // this.game.blockers.forEach(blocker => blocker.move('right'));
+
                     } else {
                         this.game.player.move(timeDelta);
                     }
@@ -66,21 +60,16 @@ class GameView {
                     if (this.game.player.pos[1] <= this.northBorder && this.game.sY < -3) {
                         this.game.player.stillMove(timeDelta, 'up');
                         this.game.moveMap();
-                        // this.game.blockers.forEach(blocker => blocker.move('up'));
+                        
                     } else {
                         this.game.player.move(timeDelta);
                     }
                     break;
                 case 'down':
                     if (this.game.player.pos[1] >= this.southBorder && this.game.sY > -595) {
-                        // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
                         this.game.player.stillMove(timeDelta, 'down');
                         this.game.moveMap();
-                        // this.game.blockers.forEach(blocker => {
-                        //     console.log('moving down')
-                        //     blocker.move('down');
-                        //     blocker.draw(this.ctx)
-                        // });
+
                     } else {
                         this.game.player.move(timeDelta);
                     }
@@ -89,7 +78,6 @@ class GameView {
         }
 
         this.game.draw(this.ctx);
-        // this.game.blockers.forEach(blocker => blocker.draw(this.ctx));
         this.lastTime = time
         requestAnimationFrame(this.loop.bind(this))
     }

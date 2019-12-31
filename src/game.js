@@ -1,5 +1,5 @@
 import Player from "./player";
-import Blocker from './blocker'
+
 
 class Game {
     constructor(canvas) {
@@ -18,42 +18,27 @@ class Game {
         
     }
 
-    // makeBlockers(ctx) {
-    //     let blocker = new Blocker([400, 200], [80, 20]);
-    //     // blocker.draw(ctx);
-    //     this.blockers.push(blocker);
+    // checkBounds(playerPos, playerDir) {
+    //     switch (playerDir) {
+    //         case 'left':
+
+    //             break;
+    //         case 'right':
+
+    //             break;
+    //         case 'up':
+
+    //             break;
+    //         case 'down':
+
+    //             break;
+    //     }
     // }
 
-    checkBounds(playerPos, playerDir) {
-        switch (playerDir) {
-            case 'left':
-
-                break;
-            case 'right':
-
-                break;
-            case 'up':
-
-                break;
-            case 'down':
-
-                break;
-        }
-    }
-
-    checkCollisions(dir) {
-        let collided = false;
-        console.log(this.player.pos)
-        console.log(this.player.gridPos)
-        for (let i = 0; i < this.grid.length; i++) {
-            for (let j = 0; j < this.grid[i].length; j++) {
-                if (this.grid[i][j] === false && this.player.gridPos === [i, j]) {
-                    collided = true;
-
-                }
-            }
-        }
-        return collided;
+    checkCollisions(playerGridPos) {
+        let j = playerGridPos[0];
+        let i = playerGridPos[1];
+        return this.grid[i][j];
     }
 
     moveMap() {
@@ -61,25 +46,22 @@ class Game {
             // decrease mapX
         if (this.player.direction === 'left') {
             this.sX += this.speed;
-            // this.blockers.forEach(blocker => blocker.pos[0] += this.speed);
+            
         }
         // if player moving right
             // increase mapX
         if (this.player.direction === 'right') {
             this.sX -= this.speed;
-            // this.blockers.forEach(blocker => blocker.pos[0] -= this.speed);
         }
         //if player moving down
             // decrease mapY
         if (this.player.direction === 'down') {
             this.sY -= this.speed;
-            // this.blockers.forEach(blocker => blocker.pos[1] -= this.speed);
         }
         // if player moving up
             // increase mapY
         if (this.player.direction === 'up') {
             this.sY += this.speed;
-            // this.blockers.forEach(blocker => blocker.pos[1] += this.speed);
         }
     }
 
@@ -90,7 +72,6 @@ class Game {
         
         ctx.rect(pos[0], pos[1], 8 * this.scale, 8 * this.scale);
         ctx.stroke();
-   
     }
 
     setValidSquares(){
@@ -426,8 +407,6 @@ class Game {
     }
 
     draw(ctx) {
-        // this.makeBlockers(ctx);
-        // ctx.clearRect(0, 0, 800, 700);
         ctx.drawImage(
             this.levelSprite,
             0,
@@ -439,11 +418,9 @@ class Game {
             this.width * this.scale,
             this.height * this.scale
         );
-        this.setValidSquares();
         this.layGrid(ctx);
         this.player.draw(ctx);
-        this.setValidSquares();
-        // this.blockers.forEach(blocker => blocker.draw(ctx))
+        
     }
 }
 

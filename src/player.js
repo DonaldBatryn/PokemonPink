@@ -4,7 +4,7 @@ class Player {
     constructor(game) {
         this.game = game;
         this.pos = [450, 250];
-        this.gridPos = [Math.floor((this.pos[0] / 10.5)), Math.floor((this.pos[1] / 12.09) * 1)]
+        this.gridPos = [0, 0];
         this.dX = 0;
         this.dY = 0;
         this.width = 15;
@@ -12,7 +12,6 @@ class Player {
         this.sprite = new Image();
         this.sprite.src = "redSprites.png";
         this.direction = 'down';
-        // this.atWall = false;
         this.biking = false;
         this.fishing = false;
         this.moving = false;
@@ -205,7 +204,7 @@ class Player {
         } else {
             return;
         }
-        this.gridPos = [Math.floor((this.pos[0] / 10.5) * 1), Math.floor((this.pos[1] / 12.09) * 1)]
+        this.updateGridPos();
     }
 
     stillMove(timeDelta, boundDir) {
@@ -217,37 +216,81 @@ class Player {
 
         if (this.direction === 'down' && boundDir === 'down') {
             this.pos[1] += 0;
+            this.updateGridPos();
             return;
         } 
 
         if (this.direction === 'up' && boundDir === 'up') {
             this.pos[1] += 0;
+            this.updateGridPos();
             return;
         } 
 
         if (this.direction === 'left' && boundDir === 'left') {
             this.pos[0] += 0;
+            this.updateGridPos();
             return;
         } 
 
         if (this.direction === 'right' && boundDir === 'right') {
             this.pos[0] += 0;
+            this.updateGridPos();
             return;
         } 
         if (this.direction === 'down'){
             this.pos[1] += this.speed;
+            this.updateGridPos();
             return;
         } else if (this.direction === 'up') {
             this.pos[1] -= this.speed;
+            this.updateGridPos();
             return;
         } else if (this.direction === 'right') {
             this.pos[0] += this.speed;
+            this.updateGridPos();
             return;
         } else if (this.direction === 'left') {
             this.pos[0] -= this.speed;
+            this.updateGridPos();
             return;
         }
-       
+    }
+
+    hitWall(timeDelta) {
+        if (this.frame === 14) {
+            this.frame = 0;
+        } else {
+            this.frame += 1;
+        }
+
+        if (this.direction === 'down') {
+            this.pos[1] -= 2;
+            this.updateGridPos();
+            return;
+        }
+
+        if (this.direction === 'up') {
+            this.pos[1] += 2;
+            this.updateGridPos();
+            return;
+        }
+
+        if (this.direction === 'left') {
+            this.pos[0] += 2;
+            this.updateGridPos();
+            return;
+        }
+
+        if (this.direction === 'right') {
+            this.pos[0] -= 2;
+            this.updateGridPos();
+            return;
+        }
+    }
+    
+    updateGridPos(){
+        this.gridPos = [Math.floor(((this.pos[0] - this.game.sX) / 22.4)), Math.floor(((this.pos[1] - this.game.sY) / 22.4))]
+
     }
 }
 
