@@ -83,9 +83,19 @@ class Game {
         this.grid[11][29] = false;
         this.grid[11][30] = false;
         this.grid[11][31] = false;
+        this.grid[11][33] = false;
         this.grid[11][34] = false;
         this.grid[11][35] = false;
-        this.grid[11][36] = false;
+
+        this.grid[13][29] = false;
+        this.grid[13][30] = false;
+        this.grid[13][31] = false;
+        this.grid[14][30] = false;
+        this.grid[14][29] = false;
+        this.grid[14][31] = false;
+        this.grid[15][29] = false;
+        this.grid[15][30] = false;
+        this.grid[15][31] = false;
 
         // upper left wall
         this.grid[12][27] = false;
@@ -103,14 +113,14 @@ class Game {
         this.grid[24][27] = false;
         this.grid[25][27] = false;
         this.grid[26][27] = false;
-        this.grid[27][27] = false;
-        this.grid[28][27] = false;
+        this.grid[27][31] = false;
+        // this.grid[28][27] = false;
 
         // ... into lower hedge
-        this.grid[28][28] = false;
-        this.grid[28][29] = false;
-        this.grid[28][30] = false;
-        this.grid[28][31] = false;
+        this.grid[26][28] = false;
+        this.grid[26][29] = false;
+        this.grid[26][30] = false;
+        this.grid[26][31] = false;
 
         // down into water
         this.grid[28][31] = false;
@@ -290,6 +300,8 @@ class Game {
         this.grid[35][60] = false;
         this.grid[36][60] = false;
 
+        this.grid[27][35] = false;
+        this.grid[27][36] = false;
         this.grid[27][37] = false;
         this.grid[27][38] = false;
         this.grid[27][39] = false;
@@ -313,37 +325,39 @@ class Game {
         this.grid[27][59] = false;
 
         // right wall from cave
-        this.grid[12][36] = false;
-        this.grid[13][36] = false;
-        this.grid[14][36] = false;
-        this.grid[15][36] = false;
-        this.grid[16][36] = false;
-        this.grid[17][36] = false;
-        this.grid[18][36] = false;
-        this.grid[19][36] = false;
-        this.grid[20][36] = false;
-        this.grid[21][36] = false;
-        this.grid[22][36] = false;
-        this.grid[23][36] = false;
-        this.grid[24][36] = false;
-        this.grid[25][36] = false;
-        this.grid[26][36] = false;
-        this.grid[27][36] = false;
-        this.grid[28][36] = false;
-        this.grid[29][36] = false;
-        this.grid[30][36] = false;
-        this.grid[31][36] = false;
-        this.grid[32][36] = false;
-        this.grid[33][36] = false;
-        this.grid[34][36] = false;
-        this.grid[35][36] = false;
+        this.grid[12][34] = false;
+        this.grid[13][34] = false;
+        this.grid[14][34] = false;
+        this.grid[15][34] = false;
+        this.grid[16][34] = false;
+        this.grid[17][34] = false;
+        this.grid[18][34] = false;
+        this.grid[19][34] = false;
+        this.grid[20][34] = false;
+        this.grid[21][34] = false;
+        this.grid[22][34] = false;
+        this.grid[23][34] = false;
+        this.grid[24][34] = false;
+        this.grid[25][34] = false;
+        this.grid[26][34] = false;
+        this.grid[27][34] = false;
+        this.grid[28][34] = false;
+        this.grid[29][34] = false;
+        this.grid[30][34] = false;
+        this.grid[31][34] = false;
+        this.grid[32][34] = false;
+        this.grid[33][34] = false;
+        this.grid[34][34] = false;
+        this.grid[35][34] = false;
 
+        this.grid[35][35] = false;
+        this.grid[35][36] = false;
         this.grid[35][37] = false;
         this.grid[35][38] = false;
         this.grid[35][39] = false;
         this.grid[35][40] = false;
         this.grid[35][41] = false;
-        this.grid[35][42] = false;
+        // this.grid[35][42] = false;
         this.grid[35][43] = false;
         this.grid[35][44] = false;
         this.grid[35][45] = false;
