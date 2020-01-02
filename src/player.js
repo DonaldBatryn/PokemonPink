@@ -289,7 +289,26 @@ class Player {
     }
     
     updateGridPos(){
-        this.gridPos = [Math.floor(((this.pos[0] - this.game.sX) / 22.4)), Math.floor(((this.pos[1] - this.game.sY) / 22.4))]
+        // let centerX = this.pos[0] + ((this.width * this.game.scale) / 2);
+        // let centerY = this.pos[1] + ((this.height * this.game.scale) / 2);
+        
+        let rightSide = this.pos[0] + this.width * this.game.scale;
+        let downSide = this.pos[1] + this.height * this.game.scale;
+        switch (this.direction) {
+            case 'left':
+                this.gridPos = [Math.floor(((this.pos[0] - this.game.sX) / 22.4)), Math.floor(((this.pos[1] - this.game.sY) / 22.4))];
+            break;
+            case 'right':
+                this.gridPos = [Math.floor(((rightSide - this.game.sX) / 22.4)), Math.floor(((this.pos[1] - this.game.sY) / 22.4))];
+            break;
+            case 'up':
+                this.gridPos = [Math.floor(((this.pos[0] - this.game.sX) / 22.4)), Math.floor(((this.pos[1] - this.game.sY) / 22.4))];
+            break;
+            case 'down':
+                this.gridPos = [Math.floor(((this.pos[0] - this.game.sX) / 22.4)), Math.floor(((downSide - this.game.sY) / 22.4))];
+            break;
+        }
+        // this.gridPos = [Math.floor(((centerX - this.game.sX) / 22.4)), Math.floor(((centerY - this.game.sY) / 22.4))]
 
     }
 }
