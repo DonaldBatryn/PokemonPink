@@ -20,9 +20,10 @@ class Game {
     }
 
     checkCollisions(playerGridPos) {
-        console.log(playerGridPos)
+        
         let j = playerGridPos[0];
         let i = playerGridPos[1];
+        if (j > 75 || j < 0 || i > 57 || i < 0) return false;
         return this.grid[i][j]['valid'];
     }
 

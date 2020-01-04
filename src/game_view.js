@@ -25,15 +25,13 @@ class GameView {
 
     loop(time) {
         const timeDelta = time - this.lastTime;
-        this.frameCount += 1;
+        // this.frameCount += 1;
 
-        if (this.frameCount > 50) {
-            this.frameCount = 0;
-        }
+        // if (this.frameCount > 50) {
+        //     this.frameCount = 0;
+        // }
         
-
         if (!this.game.checkCollisions(this.game.player.gridPos)) {
-            console.log('check collisions was true')
             this.game.player.hitWall(timeDelta);
             
         } else if (this.game.player.moving) {
