@@ -61,8 +61,6 @@ class Game {
     }
 
     setValidSquares(){
-        // let playerCenter = [(this.player.pos[0] + (this.player.width / 2)), (this.player.pos[1] + (this.player.height / 2))]
-
         // upper wall by cave door
         this.grid[11][27]['valid'] = false;
         this.grid[11][28]['valid'] = false;
@@ -110,7 +108,7 @@ class Game {
         this.grid[28][31]['valid'] = false;
 
         // down into water
-        // this.grid[28][31]['valid'] = false;
+
         this.grid[29][31]['valid'] = false;
         this.grid[30][31]['valid'] = false;
         this.grid[31][31]['valid'] = false;
@@ -143,7 +141,7 @@ class Game {
         this.grid[43][35]['valid'] = false;
         this.grid[44][35]['valid'] = false;
 
-        // this.grid[39][43]['valid'] = false;
+
         this.grid[40][43]['valid'] = false;
         this.grid[41][43]['valid'] = false;
         this.grid[42][43]['valid'] = false;
@@ -165,7 +163,6 @@ class Game {
         this.grid[48][51]['valid'] = false;
 
 
-        // this.grid[47][51]['valid'] = false;
         this.grid[48][51]['valid'] = false;
         this.grid[49][51]['valid'] = false;
         this.grid[50][51]['valid'] = false;
@@ -206,8 +203,6 @@ class Game {
         this.grid[55][72]['valid'] = false;
 
 
-        // this.grid[50][71]['valid'] = false;
-        // this.grid[51][72]['valid'] = false;
         this.grid[52][72]['valid'] = false;
         this.grid[52][73]['valid'] = false;
         this.grid[52][74]['valid'] = false;
@@ -294,7 +289,7 @@ class Game {
         this.grid[35][60]['valid'] = false;
         this.grid[36][60]['valid'] = false;
 
-        // this.grid[27][35]['valid'] = false;
+
         this.grid[27][36]['valid'] = false;
         this.grid[27][37]['valid'] = false;
         this.grid[27][38]['valid'] = false;
@@ -372,14 +367,13 @@ class Game {
         this.grid[34][36]['valid'] = false;
         this.grid[35][36]['valid'] = false;
 
-        // this.grid[35][35]['valid'] = false;
+
         this.grid[35][36]['valid'] = false;
         this.grid[35][37]['valid'] = false;
         this.grid[35][38]['valid'] = false;
         this.grid[35][39]['valid'] = false;
         this.grid[35][40]['valid'] = false;
         this.grid[35][41]['valid'] = false;
-        // this.grid[35][42]['valid'] = false;
         this.grid[35][43]['valid'] = false;
         this.grid[35][44]['valid'] = false;
         this.grid[35][45]['valid'] = false;
@@ -468,7 +462,6 @@ class Game {
         this.grid[41][24]['valid'] = false;
         this.grid[42][24]['valid'] = false;
         this.grid[43][24]['valid'] = false;
-        // this.grid[44][24]['valid'] = false;
 
         this.grid[37][19]['valid'] = false;
         this.grid[38][19]['valid'] = false;
@@ -480,8 +473,6 @@ class Game {
 
         this.grid[43][4]['valid'] = false;
         this.grid[43][5]['valid'] = false;
-        // this.grid[43][6]['valid'] = false;
-        // this.grid[43][7]['valid'] = false;
         this.grid[43][8]['valid'] = false;
         this.grid[43][9]['valid'] = false;
         this.grid[43][10]['valid'] = false;
@@ -604,7 +595,7 @@ class Game {
             this.width * this.scale,
             this.height * this.scale
         );
-        this.layGrid(ctx);
+        // this.layGrid(ctx);
         this.player.draw(ctx);
         
     }
