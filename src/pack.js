@@ -32,4 +32,6 @@ class Pack {
             return `${pokemon.name} was added to your party!`
         }
     }
+
+    
 }
