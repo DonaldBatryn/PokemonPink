@@ -318,6 +318,34 @@ class Game {
         this.grid[27][58]['valid'] = false;
         this.grid[27][59]['valid'] = false;
 
+        this.grid[28][48]['valid'] = false;
+        this.grid[29][48]['valid'] = false;
+        this.grid[30][48]['valid'] = false;
+        this.grid[31][48]['valid'] = false;
+
+        this.grid[31][49]['valid'] = false;
+        this.grid[31][50]['valid'] = false;
+        this.grid[31][51]['valid'] = false;
+        this.grid[31][52]['valid'] = false;
+        this.grid[31][53]['valid'] = false;
+        this.grid[31][56]['valid'] = false;
+        this.grid[31][57]['valid'] = false;
+        this.grid[31][58]['valid'] = false;
+        this.grid[31][59]['valid'] = false;
+
+        this.grid[35][55]['valid'] = false;
+        this.grid[36][55]['valid'] = false;
+        this.grid[37][55]['valid'] = false;
+        this.grid[38][55]['valid'] = false;
+
+        this.grid[38][56]['valid'] = false;
+        this.grid[38][57]['valid'] = false;
+
+        this.grid[39][57]['valid'] = false;
+        this.grid[40][57]['valid'] = false;
+
+        this.grid[40][58]['valid'] = false;
+
         // right wall from cave
         this.grid[12][36]['valid'] = false;
         this.grid[13][36]['valid'] = false;
@@ -399,7 +427,157 @@ class Game {
         this.grid[40][59]['valid'] = false;
         this.grid[41][59]['valid'] = false;
         this.grid[42][59]['valid'] = false;
+
+        this.grid[51][56]['valid'] = false;
+        this.grid[51][57]['valid'] = false;
+        this.grid[51][58]['valid'] = false;
+        this.grid[51][59]['valid'] = false;
+        this.grid[51][60]['valid'] = false;
+        this.grid[51][61]['valid'] = false;
+        this.grid[51][62]['valid'] = false;
+        this.grid[51][63]['valid'] = false;
+        this.grid[51][64]['valid'] = false;
+        this.grid[51][65]['valid'] = false;
+        this.grid[51][66]['valid'] = false;
+        this.grid[51][67]['valid'] = false;
+
+        this.grid[44][56]['valid'] = false;
+        this.grid[45][56]['valid'] = false;
+        this.grid[46][56]['valid'] = false;
+        this.grid[47][56]['valid'] = false;
+        this.grid[48][56]['valid'] = false;
+        this.grid[49][56]['valid'] = false;
+        this.grid[50][56]['valid'] = false;
         
+        this.grid[48][67]['valid'] = false;
+        this.grid[49][67]['valid'] = false;
+        this.grid[50][67]['valid'] = false;
+
+        this.grid[36][24]['valid'] = false;
+        this.grid[36][25]['valid'] = false;
+        this.grid[36][26]['valid'] = false;
+        this.grid[36][27]['valid'] = false;
+        this.grid[36][28]['valid'] = false;
+        this.grid[36][29]['valid'] = false;
+        this.grid[36][30]['valid'] = false;
+
+        this.grid[37][24]['valid'] = false;
+        this.grid[38][24]['valid'] = false;
+        this.grid[39][24]['valid'] = false;
+        this.grid[40][24]['valid'] = false;
+        this.grid[41][24]['valid'] = false;
+        this.grid[42][24]['valid'] = false;
+        this.grid[43][24]['valid'] = false;
+        // this.grid[44][24]['valid'] = false;
+
+        this.grid[37][19]['valid'] = false;
+        this.grid[38][19]['valid'] = false;
+        this.grid[39][19]['valid'] = false;
+        this.grid[40][19]['valid'] = false;
+        this.grid[41][19]['valid'] = false;
+        this.grid[42][19]['valid'] = false;
+        this.grid[43][19]['valid'] = false;
+
+        this.grid[43][4]['valid'] = false;
+        this.grid[43][5]['valid'] = false;
+        // this.grid[43][6]['valid'] = false;
+        // this.grid[43][7]['valid'] = false;
+        this.grid[43][8]['valid'] = false;
+        this.grid[43][9]['valid'] = false;
+        this.grid[43][10]['valid'] = false;
+        this.grid[43][11]['valid'] = false;
+        this.grid[43][12]['valid'] = false;
+        this.grid[43][13]['valid'] = false;
+        this.grid[43][14]['valid'] = false;
+        this.grid[43][15]['valid'] = false;
+        this.grid[43][16]['valid'] = false;
+        this.grid[43][17]['valid'] = false;
+        this.grid[43][18]['valid'] = false;
+
+        this.grid[44][28]['valid'] = false;
+        this.grid[45][28]['valid'] = false;
+        this.grid[46][28]['valid'] = false;
+        this.grid[47][28]['valid'] = false;
+
+        this.grid[39][3]['valid'] = false;
+        this.grid[40][3]['valid'] = false;
+        this.grid[41][3]['valid'] = false;
+        this.grid[42][3]['valid'] = false;
+        this.grid[43][3]['valid'] = false;
+        this.grid[44][3]['valid'] = false;
+        this.grid[45][3]['valid'] = false;
+        this.grid[46][3]['valid'] = false;
+        this.grid[47][3]['valid'] = false;
+        this.grid[48][3]['valid'] = false;
+
+        this.grid[39][4]['valid'] = false;
+        this.grid[39][5]['valid'] = false;
+        this.grid[39][6]['valid'] = false;
+        this.grid[39][7]['valid'] = false;
+        this.grid[39][8]['valid'] = false;
+        this.grid[39][9]['valid'] = false;
+        this.grid[39][10]['valid'] = false;
+        this.grid[39][11]['valid'] = false;
+
+        this.grid[36][19]['valid'] = false;
+
+        this.grid[35][11]['valid'] = false;
+        this.grid[36][11]['valid'] = false;
+        this.grid[37][11]['valid'] = false;
+        this.grid[38][11]['valid'] = false;
+
+        this.grid[35][12]['valid'] = false;
+        this.grid[35][13]['valid'] = false;
+        this.grid[35][14]['valid'] = false;
+        this.grid[35][15]['valid'] = false;
+        this.grid[35][16]['valid'] = false;
+        this.grid[35][17]['valid'] = false;
+        this.grid[35][18]['valid'] = false;
+        this.grid[35][19]['valid'] = false;
+        this.grid[35][20]['valid'] = false;
+        this.grid[35][21]['valid'] = false;
+        this.grid[35][22]['valid'] = false;
+        this.grid[35][23]['valid'] = false;
+
+        this.grid[48][4]['valid'] = false;
+        this.grid[48][5]['valid'] = false;
+        this.grid[48][6]['valid'] = false;
+        this.grid[48][7]['valid'] = false;
+        this.grid[48][8]['valid'] = false;
+        this.grid[48][9]['valid'] = false;
+        this.grid[48][10]['valid'] = false;
+        this.grid[48][11]['valid'] = false;
+        this.grid[48][12]['valid'] = false;
+        this.grid[48][13]['valid'] = false;
+        this.grid[48][14]['valid'] = false;
+        this.grid[48][15]['valid'] = false;
+        this.grid[48][16]['valid'] = false;
+        this.grid[48][17]['valid'] = false;
+        this.grid[48][18]['valid'] = false;
+        this.grid[48][19]['valid'] = false;
+        this.grid[48][20]['valid'] = false;
+        this.grid[48][21]['valid'] = false;
+        this.grid[48][22]['valid'] = false;
+        this.grid[48][23]['valid'] = false;
+        this.grid[48][24]['valid'] = false;
+        this.grid[48][25]['valid'] = false;
+        this.grid[48][26]['valid'] = false;
+        this.grid[48][27]['valid'] = false;
+        this.grid[48][28]['valid'] = false;
+        this.grid[48][29]['valid'] = false;
+        this.grid[48][30]['valid'] = false;
+        this.grid[48][31]['valid'] = false;
+        this.grid[48][32]['valid'] = false;
+        this.grid[48][33]['valid'] = false;
+        this.grid[48][34]['valid'] = false;
+        this.grid[48][35]['valid'] = false;
+        this.grid[48][36]['valid'] = false;
+        this.grid[48][37]['valid'] = false;
+        this.grid[48][38]['valid'] = false;
+        this.grid[48][39]['valid'] = false;
+        this.grid[48][40]['valid'] = false;
+        this.grid[48][41]['valid'] = false;
+        this.grid[48][42]['valid'] = false;
     }
 
     layGrid(ctx) {
@@ -426,7 +604,7 @@ class Game {
             this.width * this.scale,
             this.height * this.scale
         );
-        // this.layGrid(ctx);
+        this.layGrid(ctx);
         this.player.draw(ctx);
         
     }
