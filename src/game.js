@@ -4,6 +4,7 @@ import Player from "./player";
 class Game {
     constructor(canvas) {
         this.player = new Player(this);
+        this.startTime = Date.now();
         this.canvas = canvas;
         this.blockers = [];
         this.scale = 2.8;
@@ -424,7 +425,7 @@ class Game {
             this.width * this.scale,
             this.height * this.scale
         );
-        this.layGrid(ctx);
+        // this.layGrid(ctx);
         this.player.draw(ctx);
         
     }
